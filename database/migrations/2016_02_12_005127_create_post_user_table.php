@@ -12,11 +12,11 @@ class CreatePostUserTable extends Migration
      */
     public function up()
     {
-        Schema::create('bookmark_post_user', function (Blueprint $table) {
+        Schema::create('post_user', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
-            $table->integer('user_id')->unisigned();
-            $table->integer('post_id')->unisigned();
+            $table->integer('user_id')->unisigned()->index();
+            $table->integer('post_id')->unisigned()->index();
         });
     }
 
@@ -27,6 +27,6 @@ class CreatePostUserTable extends Migration
      */
     public function down()
     {
-        Schema::drop('bookmark_post_user');
+        Schema::drop('post_user');
     }
 }
