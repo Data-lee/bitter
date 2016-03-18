@@ -19,3 +19,9 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
         'remember_token' => str_random(10),
     ];
 });
+
+$factory->define(App\Post::class, function (Faker\Generator $faker) {
+    return [
+        'content' => $faker->realText($maxNbChars = 140, $indexSize = 2),
+    ];
+});
